@@ -1,0 +1,166 @@
+---
+const especialistas = [
+  {
+    id: 1,
+    nombre: "Dra. Ana Martínez",
+    especialidad: "Ortodoncista",
+    imagen: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+    descripcion: "Especialista en ortodoncia con más de 10 años de experiencia en alineadores invisibles y brackets de última generación.",
+    delay: 100
+  },
+  {
+    id: 2,
+    nombre: "Dr. Carlos Rodríguez",
+    especialidad: "Cirujano Maxilofacial",
+    imagen: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+    descripcion: "Experto en implantes dentales y cirugías maxilofaciales complejas con estudios en las mejores instituciones internacionales.",
+    delay: 200
+  },
+  {
+    id: 3,
+    nombre: "Dra. Laura Sánchez",
+    especialidad: "Odontopediatra",
+    imagen: "https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+    descripcion: "Especializada en el tratamiento dental infantil, creando experiencias positivas para los más pequeños durante sus visitas al dentista.",
+    delay: 300
+  },
+  {
+    id: 4,
+    nombre: "Dr. Miguel Torres",
+    especialidad: "Endodoncista",
+    imagen: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=400&q=80",
+    descripcion: "Profesional enfocado en tratamientos de conducto con técnicas mínimamente invasivas y alta tasa de éxito.",
+    delay: 400
+  }
+];
+---
+
+<section id="nosotros" class="section-padding bg-gray-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary-600 font-semibold" data-aos="fade-up">Nuestro Equipo</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mt-2 mb-4" data-aos="fade-up" data-aos-delay="100">
+        Especialistas comprometidos con tu salud
+      </h2>
+      <p class="text-secondary-600" data-aos="fade-up" data-aos-delay="200">
+        Contamos con un equipo de profesionales altamente cualificados y en constante formación para ofrecerte los mejores tratamientos.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      {especialistas.map((especialista) => (
+        <div 
+          class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 group"
+          data-aos="fade-up" 
+          data-aos-delay={especialista.delay}
+        >
+          <div class="relative overflow-hidden">
+            <img 
+              src={especialista.imagen} 
+              alt={especialista.nombre}
+              class="w-full h-64 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-secondary-900">{especialista.nombre}</h3>
+            <p class="text-primary-600 font-medium mb-3">{especialista.especialidad}</p>
+            <p class="text-secondary-600 text-sm">{especialista.descripcion}</p>
+            
+            <div class="mt-4 flex space-x-3">
+              <a href="#" class="text-gray-500 hover:text-primary-600 transition-colors duration-300">
+                <i class="fab fa-linkedin"></i>
+              </a>
+              <a href="#" class="text-gray-500 hover:text-primary-600 transition-colors duration-300">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Información de la clínica -->
+    <div class="mt-20 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div data-aos="fade-right">
+        <span class="text-primary-600 font-semibold">Sobre Nosotros</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mt-2 mb-6">
+          Un centro dental comprometido con la excelencia
+        </h2>
+        <p class="text-secondary-600 mb-4">
+          En <strong>Sonrisas Brillantes</strong> nos dedicamos a proporcionar la mejor atención dental en un ambiente cómodo y relajado. Utilizamos tecnología de vanguardia y técnicas avanzadas para garantizar resultados excepcionales.
+        </p>
+        <p class="text-secondary-600 mb-6">
+          Nuestro enfoque se centra en el paciente, desarrollando planes de tratamiento personalizados que se adapten a sus necesidades específicas y objetivos de salud bucal.
+        </p>
+
+        <!-- Características de la clínica -->
+        <div class="space-y-4 mb-8">
+          <div class="flex items-start space-x-3">
+            <div class="bg-primary-100 p-2 rounded-full mt-1">
+              <i class="fas fa-check-circle text-primary-600"></i>
+            </div>
+            <div>
+              <h3 class="font-medium text-secondary-900">Instalaciones modernas</h3>
+              <p class="text-secondary-600 text-sm">Equipadas con la última tecnología para diagnóstico y tratamiento.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="bg-primary-100 p-2 rounded-full mt-1">
+              <i class="fas fa-check-circle text-primary-600"></i>
+            </div>
+            <div>
+              <h3 class="font-medium text-secondary-900">Atención personalizada</h3>
+              <p class="text-secondary-600 text-sm">Cada paciente recibe un plan de tratamiento adaptado a sus necesidades.</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-3">
+            <div class="bg-primary-100 p-2 rounded-full mt-1">
+              <i class="fas fa-check-circle text-primary-600"></i>
+            </div>
+            <div>
+              <h3 class="font-medium text-secondary-900">Formación continua</h3>
+              <p class="text-secondary-600 text-sm">Nuestro equipo se mantiene actualizado con las últimas técnicas y avances.</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contacto" class="bg-primary-600 hover:bg-primary-700 text-white py-3 px-8 rounded-full font-medium transition-colors duration-300 inline-block">
+          Conócenos mejor
+        </a>
+      </div>
+
+      <div class="relative" data-aos="fade-left">
+        <div class="grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <img 
+              src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"
+              alt="Instalaciones modernas"
+              class="rounded-lg shadow-md h-48 w-full object-cover object-center"
+            />
+            <img 
+              src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"
+              alt="Tecnología dental"
+              class="rounded-lg shadow-md h-64 w-full object-cover object-center"
+            />
+          </div>
+          <div class="space-y-4 pt-10">
+            <img 
+              src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"
+              alt="Consultorio dental"
+              class="rounded-lg shadow-md h-64 w-full object-cover object-center"
+            />
+            <img 
+              src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&q=80"
+              alt="Equipo trabajando"
+              class="rounded-lg shadow-md h-48 w-full object-cover object-center"
+            />
+          </div>
+        </div>
+        
+        <!-- Decoración -->
+        <div class="absolute -z-10 -bottom-10 -right-10 w-40 h-40 bg-primary-100 rounded-full opacity-60 blur-2xl"></div>
+        <div class="absolute -z-10 -top-10 -left-10 w-40 h-40 bg-primary-200 rounded-full opacity-30 blur-2xl"></div>
+      </div>
+    </div>
+  </div>
+</section>

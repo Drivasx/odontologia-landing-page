@@ -1,0 +1,91 @@
+---
+const servicios = [
+  {
+    id: 1,
+    title: "Diagnóstico Dental 3D",
+    description: "Escaneo digital completo de tu boca para un diagnóstico preciso y planificación de tratamientos personalizados.",
+    icon: "fa-regular fa-tooth",
+    delay: 100
+  },
+  {
+    id: 2,
+    title: "Blanqueamiento Avanzado",
+    description: "Tratamientos de blanqueamiento dental que devuelven el brillo natural a tus dientes de forma segura y efectiva.",
+    icon: "fa-solid fa-wand-magic-sparkles",
+    delay: 200
+  },
+  {
+    id: 3,
+    title: "Implantes Dentales",
+    description: "Soluciones permanentes para dientes perdidos con tecnología de implantes de última generación.",
+    icon: "fa-solid fa-teeth",
+    delay: 300
+  },
+  {
+    id: 4,
+    title: "Ortodoncia Invisible",
+    description: "Alineadores transparentes personalizados que corrigen la posición de tus dientes discretamente.",
+    icon: "fa-solid fa-teeth-open",
+    delay: 400
+  },
+  {
+    id: 5,
+    title: "Odontopediatría",
+    description: "Cuidado dental especializado para niños en un ambiente amigable y tranquilizador.",
+    icon: "fa-solid fa-baby",
+    delay: 500
+  },
+  {
+    id: 6,
+    title: "Cirugía Dental",
+    description: "Procedimientos quirúrgicos avanzados realizados por especialistas con años de experiencia.",
+    icon: "fa-solid fa-user-doctor",
+    delay: 600
+  }
+];
+---
+
+<section id="servicios" class="section-padding bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-primary-600 font-semibold" data-aos="fade-up">Nuestros Servicios</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-secondary-900 mt-2 mb-4" data-aos="fade-up" data-aos-delay="100">
+        Tratamientos dentales de calidad
+      </h2>
+      <p class="text-secondary-600" data-aos="fade-up" data-aos-delay="200">
+        Ofrecemos una amplia gama de servicios odontológicos con tecnología de vanguardia y atención personalizada para cada paciente.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {servicios.map((servicio) => (
+        <div 
+          class="bg-gray-50 p-6 rounded-xl hover:shadow-lg transition-shadow duration-300 border border-gray-100 hover:border-primary-100 group"
+          data-aos="fade-up"
+          data-aos-delay={servicio.delay}
+        >
+          <div class="w-14 h-14 bg-primary-100 rounded-lg flex items-center justify-center mb-5 text-primary-600 group-hover:bg-primary-600 group-hover:text-white transition-colors duration-300">
+            <i class={`text-xl ${servicio.icon}`}></i>
+          </div>
+          <h3 class="text-xl font-semibold text-secondary-900 mb-3">{servicio.title}</h3>
+          <p class="text-secondary-600">{servicio.description}</p>
+          <div class="mt-4">
+            <a href="#cita" class="inline-flex items-center text-primary-600 hover:text-primary-700 transition-colors duration-300 font-medium">
+              Saber más
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      ))}
+    </div>
+    
+    <!-- Llamada a la acción -->
+    <div class="mt-16 text-center" data-aos="fade-up">
+      <a href="#cita" class="bg-primary-600 hover:bg-primary-700 text-white py-3 px-8 rounded-full font-medium transition-colors duration-300 inline-block">
+        Consulta todos nuestros servicios
+      </a>
+    </div>
+  </div>
+</section>

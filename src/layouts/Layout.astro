@@ -1,0 +1,90 @@
+---
+interface Props {
+	title: string;
+	description?: string;
+}
+
+const { 
+	title = "Centro Odontológico - Sonrisas Brillantes", 
+	description = "Centro odontológico especializado en tratamientos dentales avanzados con tecnología de vanguardia y atención personalizada."
+} = Astro.props;
+
+// Importar estilos
+import '../styles/globals.css';
+---
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		
+		<!-- AOS CSS -->
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		
+		<!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		
+		<!-- Twitter -->
+		<meta property="twitter:card" content="summary_large_image" />
+		<meta property="twitter:title" content={title} />
+		<meta property="twitter:description" content={description} />
+		
+		<!-- Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Roboto+Slab:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+		
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		
+		<title>{title}</title>
+	</head>
+	<body class="bg-gray-50">
+		<slot />
+
+		<!-- Inicializar AOS -->
+		<script is:inline src="https://unpkg.com/aos@next/dist/aos.js"></script>
+		<script is:inline>
+			document.addEventListener('DOMContentLoaded', () => {
+				if (typeof AOS !== 'undefined') {
+					AOS.init({
+						duration: 800,
+						easing: 'ease-in-out',
+						once: true,
+						mirror: false,
+						startEvent: 'DOMContentLoaded'
+					});
+				}
+			});
+		</script>
+		<script src="../scripts/main.js"></script>
+	</body>
+</html>
+
+<style is:global>
+	html {
+		scroll-behavior: smooth;
+	}
+	
+	body {
+		font-family: 'Montserrat', sans-serif;
+		overflow-x: hidden;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		font-family: 'Roboto Slab', serif;
+	}
+
+	.section-padding {
+		padding: 5rem 0;
+	}
+</style>

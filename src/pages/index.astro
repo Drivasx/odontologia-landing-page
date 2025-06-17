@@ -1,0 +1,37 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import Servicios from '../components/Servicios.astro';
+import Nosotros from '../components/Nosotros.astro';
+import PorQueElegirnos from '../components/PorQueElegirnos.astro';
+import Testimonios from '../components/Testimonios.astro';
+import FAQ from '../components/FAQ.astro';
+import Cita from '../components/Cita.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Centro Odontológico - Sonrisas Brillantes | Expertos en Salud Dental" 
+  description="Centro odontológico especializado en tratamientos dentales avanzados con tecnología de vanguardia y atención personalizada para toda la familia.">
+  
+  <Navbar />
+  <Hero />
+  <Servicios />
+  <PorQueElegirnos />
+  <Nosotros />
+  <Testimonios />
+  <FAQ />
+  <Cita />
+  <Footer />
+
+  <!-- Botón de WhatsApp -->
+  <a 
+    href="https://wa.me/34600123456" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 flex items-center justify-center shadow-lg z-50 transition-all duration-300 hover:scale-110"
+  >
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+
+</Layout>
